@@ -1,7 +1,7 @@
 # 🌐 Bhargava Surendra - Developer Portfolio
 
 ## 🔗 Live Website
-👉 https://YOUR_USERNAME.github.io/portfolio/
+👉 https://.github.io/Bhargava20surendra/portfolio/
 
 ---
 
