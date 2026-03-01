@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bhargava Surendra | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(6px);
+            transition: background 0.3s;
+        }
+
+        .navbar a {
+            color: white !important;
+        }
+
+        .navbar a:hover,
+        .navbar .btn-outline-warning:hover {
+            color: #ffc107 !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1d2671, #c33764);
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-img {
+            width: 250px;
+            border-radius: 20px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero h1 span {
+            color: #ffc107;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            transition: 0.4s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 22px;
+            margin: 10px;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #ffc107;
+        }
+
+        footer {
+            background: #111;
+            color: white;
+            padding: 40px 20px 20px;
+            text-align: center;
+            border-top: 2px solid #c33764;
+        }
+
+        footer a {
+            transition: color 0.3s, transform 0.3s;
+            text-decoration: none;
+            color: white;
+        }
+
+        footer a:hover {
+            color: #ffc107;
+            transform: translateY(-3px);
+        }
+
+        .footer-column {
+            margin-bottom: 2rem;
+        }
+
+        .footer-column h6 {
+            font-weight: 700;
+            color: #ffc107;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column ul li a {
+            font-size: 0.95rem;
+        }
+
+        .footer-column p {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-socials a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            margin: 0 0.5rem;
+            border-radius: 50%;
+            background: rgba(255, 193, 7, 0.1);
+            transition: all 0.3s;
+        }
+
+        .footer-socials a:hover {
+            background: #c33764;
+            color: white !important;
+            transform: translateY(-3px) rotate(5deg);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 1rem;
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .btn-custom {
+            background: #ffc107;
+            border: none;
+        }
+
+        .btn-custom:hover {
+            background: #e0a800;
+        }
+
+        /* Interactive / Visual Enhancements */
+        .navbar-toggler {
+            border: none;
+        }
+
+        .navbar-toggler .navbar-toggler-icon {
+            background-image: none;
+            display: inline-block;
+            width: 28px;
+            height: 2px;
+            background: #fff;
+            position: relative;
+        }
+
+        .navbar-toggler .navbar-toggler-icon::before,
+        .navbar-toggler .navbar-toggler-icon::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #fff;
+        }
+
+        .navbar-toggler .navbar-toggler-icon::before {
+            top: -8px;
+        }
+
+        .navbar-toggler .navbar-toggler-icon::after {
+            top: 8px;
+        }
+
+        /* Navbar link hover/active style */
+        .navbar-nav .nav-link {
+            position: relative;
+            transition: color 0.2s;
+        }
+
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #ffc107;
+            transition: width 0.3s;
+        }
+
+        .navbar-nav .nav-link:hover::after,
+        .navbar-nav .nav-link.active::after {
+            width: 100%;
+        }
+
+        .typed {
+            color: #ffc107;
+            font-weight: 700;
+        }
+
+        .btn-animated {
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .btn-animated:hover {
+            transform: translateY(-4px) rotate(-1deg);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        .project-link {
+            color: #1d2671;
+            text-decoration: none;
+        }
+
+        .project-link:hover {
+            color: #c33764;
+            text-decoration: underline;
+        }
+
+        .card h4 {
+            transition: color 0.25s;
+        }
+
+        .card:hover h4 {
+            color: #c33764;
+        }
+
+        #backToTop {
+            position: fixed;
+            right: 20px;
+            bottom: 24px;
+            display: none;
+            z-index: 1050;
+            padding: 0.5rem 0.65rem;
+            border-radius: 50%;
+        }
+
+        .badge-skill {
+            display: inline-block;
+            background: #1d2671 !important;
+            color: #ffffff !important;
+            padding: 0.55rem 0.9rem;
+            margin: 0.3rem;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 1rem;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+        }
+
+        .badge-skill:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Education card styling */
+        .education-card {
+            position: relative;
+            border-left: 4px solid #c33764;
+        }
+
+        .education-card::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 20px;
+            width: 16px;
+            height: 16px;
+            background: #c33764;
+            border-radius: 50%;
+        }
+
+        .education-card h4 {
+            margin-bottom: 0.25rem;
+        }
+
+        .education-card p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Skill category cards */
+        .skill-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .skill-card h5 {
+            color: #c33764;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .skill-card h5 i {
+            margin-right: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .skill-card .badge-skill {
+            display: inline-block;
+            margin: 0.25rem;
+        }
+
+        /* Project button styling */
+        .btn-project {
+            background: linear-gradient(135deg, #c33764, #1d2671);
+            color: white !important;
+            border: none;
+            font-weight: 600;
+            padding: 0.5rem 1.2rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .btn-project:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(195, 55, 100, 0.3);
+            background: linear-gradient(135deg, #1d2671, #c33764);
+        }
+
+        .btn-project i {
+            transition: transform 0.3s ease;
+        }
+
+        .btn-project:hover i {
+            transform: translateX(3px);
+        }
+
+        /* Flash Messages */
+        .flash-messages {
+            position: fixed;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10000;
+            max-width: 500px;
+            width: 90%;
+        }
+
+        .alert-flash {
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 500;
+            animation: slideDown 0.4s ease, slideUp 0.4s ease 3.6s forwards;
+        }
+
+        .alert-success {
+            background: #d4edda;
+            border: 1px solid #28a745;
+            color: #155724;
+        }
+
+        .alert-error {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            to {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+        }
+
+        /* Loading Spinner */
+        .spinner {
+            display: none;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #f3f3f3;
+            border-top: 2px solid #333;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+            margin-right: 0.5rem;
+        }
+
+        .spinner.show {
+            display: inline-block;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .btn-submit:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Flash Messages (client‑side) -->
+    <div id="flashMessages" class="flash-messages"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand text-white fw-bold" href="#"><i class="fas fa-terminal me-1"></i> BHARGAVA</a>
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center text-center text-md-start">
+
+                <!-- Left Content -->
+                <div class="col-md-6">
+                    <h1>Hello, I'm <span>Bhargava Surendra</span></h1>
+                    <p class="lead mt-3">
+                        <span id="typed" class="typed">Python Full Stack Developer</span>
+                    </p>
+
+                    <div class="mt-4">
+                        <a href="#contact" class="btn btn-custom px-4 py-2">Hire Me</a>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="social-icons mt-4">
+                        <a href="mailto:bhargava.surendrachekuri13@gmail.com">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+
+                        <a href="https://github.com/Bhargava20surendra" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+
+                        <a href="https://linkedin.com/in/bhargava-surendra-chekuri" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Image -->
+                <div class="col-md-6 text-center mt-4 mt-md-0">
+                    <img src="profile.jpg" alt="Profile Image" class="profile-img img-fluid">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="bg-light text-center">
+        <div class="container">
+            <h2 class="mb-4"><i class="fas fa-user-circle me-2"></i>About Me</h2>
+            <p class="lead">
+                I’m a Computer Science graduate and Python Full Stack Developer with hands-on experience in building
+                scalable web applications and intelligent systems. I specialize in Flask, MySQL, and Machine Learning,
+                and I enjoy turning complex problems into efficient, real-world solutions. Passionate about continuous
+                learning and innovation, I aim to build impactful technology that makes a difference.
+            </p>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="bg-light">
+        <div class="container fade-in">
+            <h2 class="text-center mb-5"><i class="fas fa-star me-2"></i>Skills</h2>
+            <div class="row g-4">
+                <!-- Programming -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="skill-card">
+                        <h5><i class="fas fa-code"></i> Programming</h5>
+                        <div class="text-center">
+                            <span class="badge text-white badge-skill">Python</span>
+                            <span class="badge text-white badge-skill">HTML</span>
+                            <span class="badge text-white badge-skill">CSS</span>
+                            <span class="badge text-white badge-skill">JavaScript</span>
+                            <span class="badge text-white badge-skill">Bootstrap</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Frameworks -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="skill-card">
+                        <h5><i class="fas fa-cube"></i> Frameworks</h5>
+                        <div class="text-center">
+                            <span class="badge text-white badge-skill">Flask</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Databases -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="skill-card">
+                        <h5><i class="fas fa-database"></i> Databases</h5>
+                        <div class="text-center">
+                            <span class="badge text-white badge-skill">MySQL</span>
+                            <span class="badge text-white badge-skill">Oracle</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools & Platforms -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="skill-card">
+                        <h5><i class="fas fa-tools"></i> Tools</h5>
+                        <div class="text-center">
+                            <span class="badge text-white badge-skill">Git</span>
+                            <span class="badge text-white badge-skill">VS Code</span>
+                            <span class="badge text-white badge-skill">XAMPP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Design & Content -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="skill-card">
+                        <h5><i class="fas fa-palette"></i> Design</h5>
+                        <div class="text-center">
+                            <span class="badge text-white badge-skill">Canva</span>
+                            <span class="badge text-white badge-skill">WordPress</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ML & Data Science -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="skill-card">
+                        <h5><i class="fas fa-brain"></i> ML & AI</h5>
+                        <div class="text-center">
+                            <span class="badge text-white badge-skill">Machine Learning</span>
+                            <span class="badge text-white badge-skill">OpenCV</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="bg-light text-center">
+        <div class="container fade-in">
+            <h2 class="mb-4"><i class="fas fa-graduation-cap me-2"></i>Education</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card p-4 education-card mb-4">
+                        <h4>Eluru College of Engineering and Technology</h4>
+                        <p class="text-muted">Bachelor of Technology in Computer Science and Engineering</p>
+                        <p>Nov&nbsp;2021 – Apr&nbsp;2025 &bull; CGPA: 8.4</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+        <div class="container fade-in">
+            <h2 class="text-center mb-5"><i class="fas fa-rocket me-2"></i>Projects</h2>
+            <div class="row g-4">
+
+                <!-- Retail Store Clustering -->
+                <div class="col-md-6">
+                    <div class="card p-4 h-100">
+                        <h4><i class="fas fa-chart-bar me-2"></i>Retail Store Clustering</h4>
+                        <small class="text-muted">Jul 2024 – Sep 2024 &bull; Tech Yuva Computers (Intern)</small>
+                        <p class="mt-2">
+                            Developed a project as part of a Machine Learning internship analyzing sales and customer
+                            demographic data.
+                        </p>
+                        <ul>
+                            <li>Grouped retail stores into meaningful clusters to identify patterns and support
+                                data-driven decision-making.</li>
+                            <li>Applied Elbow Method, feature scaling, and PCA to optimize and interpret clusters
+                                effectively.</li>
+                            <li>Presented findings with clear visualisations, demonstrating strong research and
+                                communication skills.</li>
+                        </ul>
+                        <p><strong>Technologies:</strong> Python, scikit-learn, PCA, Elbow Method</p>
+                        <a href="https://linkedin.com/in/bhargava-surendra-chekuri" target="_blank"
+                            class="btn btn-project mt-3"><i class="fas fa-external-link-alt"></i> View Project</a>
+                    </div>
+                </div>
+
+                <!-- Deloitte Forage Simulation -->
+                <div class="col-md-6">
+                    <div class="card p-4 h-100">
+                        <h4><i class="fas fa-chart-line me-2"></i>Deloitte Australia Data Analytics Job Simulation</h4>
+                        <small class="text-muted">Forage (self-paced)</small>
+                        <p class="mt-2">
+                            Completed a Deloitte job simulation involving data analysis and forensic technology.
+                        </p>
+                        <ul>
+                            <li>Created an interactive visualization dashboard using Tableau.</li>
+                            <li>Classified large datasets using Excel to derive business insights.</li>
+                        </ul>
+                        <p><strong>Technologies:</strong> Tableau, Excel, SQL</p>
+                        <a href="https://www.theforage.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_68ee8f0ff8f3d260c3ef5f77_1761479337748_completion_certificate.pdf"
+                            target="_blank" class="btn btn-project mt-3"><i class="fas fa-external-link-alt"></i> View
+                            Project</a>
+                    </div>
+                </div>
+
+                <!-- Facial Expression Driven Song Suggestion -->
+                <div class="col-md-6">
+                    <div class="card p-4 h-100">
+                        <h4><i class="fas fa-face-smile me-2"></i>Facial Expression Driven Song Suggestion System</h4>
+                        <small class="text-muted">Jan 2025 – Apr 2025</small>
+                        <p class="mt-2">
+                            Real-time facial emotion recognition and music recommendation application.
+                        </p>
+                        <ul>
+                            <li>Developed a real-time facial emotion recognition system using CNN and OpenCV.</li>
+                            <li>Suggested songs dynamically from a local MySQL database based on detected emotions.</li>
+                            <li>Integrated backend logic with a user‑friendly Flask web interface.</li>
+                            <li>Achieved 88 % accuracy in facial expression prediction using the CNN model.</li>
+                        </ul>
+                        <p><strong>Technologies:</strong> OpenCV, CNN, Flask, MySQL, HTML/CSS, JavaScript</p>
+                        <a href="https://github.com/Bhargava20surendra/Emotion-Beats" target="_blank"
+                            class="btn btn-project mt-3"><i class="fas fa-external-link-alt"></i> View Project</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Contact -->
+    <section id="contact" class="bg-light">
+        <div class="container fade-in">
+            <h2 class="text-center mb-4"><i class="fas fa-paper-plane me-2"></i>Contact Me</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <form method="post" action="https://formspree.io/f/xojnzllq" id="contactForm">
+                        <input type="text" class="form-control mb-3" placeholder="Your Name" name="name" required>
+                        <input type="email" class="form-control mb-3" placeholder="Your Email" name="email" required>
+                        <textarea class="form-control mb-3" rows="4" placeholder="Your Message" name="message"
+                            required></textarea>
+                        <button type="submit" class="btn btn-dark w-100 btn-submit" id="submitBtn">
+                            <span class="spinner" id="spinner"></span>
+                            <span id="btnText">Send Message</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <!-- Quick Links -->
+                <div class="col-md-4 footer-column">
+                    <h6><i class="fas fa-link me-2"></i>Quick Links</h6>
+                    <ul>
+                        <li><a href="#about">About Me</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="col-md-4 footer-column">
+                    <h6><i class="fas fa-info-circle me-2"></i>Contact</h6>
+                    <p><i class="fas fa-phone me-2"></i><a href="tel:+919603742489">+91 9603742489</a></p>
+                    <p><i class="fas fa-envelope me-2"></i><a
+                            href="mailto:bhargava.surendrachekuri13@gmail.com">bhargava.surendrachekuri13@gmail.com</a>
+                    </p>
+                    <p><i class="fas fa-map-marker-alt me-2"></i>Hyderabad, Telangana</p>
+                </div>
+
+                <!-- Social Media -->
+                <div class="col-md-4 footer-column">
+                    <h6><i class="fas fa-share-alt me-2"></i>Connect</h6>
+                    <div class="footer-socials">
+                        <a href="mailto:bhargava.surendrachekuri13@gmail.com" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://github.com/Bhargava20surendra" target="_blank" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/bhargava-surendra-chekuri" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="footer-bottom">
+                <p>&copy; 2026 Bhargava Surendra | All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="btn btn-custom" aria-label="Back to top">↑</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Typed role effect
+        (() => {
+            const el = document.getElementById('typed');
+            if (!el) return;
+            const roles = [
+                'Python Full Stack Developer',
+                'Machine Learning Enthusiast'
+            ];
+            let idx = 0, char = 0, forward = true;
+
+            function tick() {
+                const current = roles[idx];
+                if (forward) {
+                    char++;
+                    el.textContent = current.slice(0, char);
+                    if (char === current.length) { forward = false; setTimeout(tick, 1200); return; }
+                } else {
+                    char--;
+                    el.textContent = current.slice(0, char);
+                    if (char === 0) { forward = true; idx = (idx + 1) % roles.length; }
+                }
+                setTimeout(tick, forward ? 80 : 30);
+            }
+            tick();
+        })();
+
+        // Scroll reveal for elements with .fade-in
+        (function () {
+            const items = document.querySelectorAll('.fade-in');
+            const onScroll = () => {
+                const h = window.innerHeight;
+                items.forEach(el => {
+                    const r = el.getBoundingClientRect();
+                    if (r.top < h - 80) el.classList.add('visible');
+                });
+            };
+            window.addEventListener('scroll', onScroll);
+            window.addEventListener('load', onScroll);
+        })();
+
+        // Back to top button
+        (function () {
+            const btn = document.getElementById('backToTop');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) btn.style.display = 'block'; else btn.style.display = 'none';
+            });
+            btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        })();
+
+        // Auto-collapse mobile navbar on link click
+        (function () {
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+            const bsCollapseEl = document.getElementById('nav');
+            navLinks.forEach(l => l.addEventListener('click', () => {
+                if (window.getComputedStyle(document.querySelector('.navbar-toggler')).display !== 'none') {
+                    const bsCollapse = new bootstrap.Collapse(bsCollapseEl, { toggle: false });
+                    bsCollapse.hide();
+                }
+            }));
+        })();
+
+        // Simple scrollspy to mark active nav item
+        (function () {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+            function activate() {
+                let idx = sections.length;
+                while (--idx && window.scrollY + 100 < sections[idx].offsetTop) { }
+                navLinks.forEach(link => link.classList.remove('active'));
+                const id = sections[idx].id;
+                const activeLink = document.querySelector('.navbar-nav .nav-link[href="#' + id + '"]');
+                if (activeLink) activeLink.classList.add('active');
+            }
+            activate();
+            window.addEventListener('scroll', activate);
+        })();
+
+        // Auto-hide flash messages after 4 seconds
+        (function () {
+            const alerts = document.querySelectorAll('.alert-flash');
+            alerts.forEach(alert => {
+                setTimeout(() => {
+                    alert.style.display = 'none';
+                }, 4000);
+            });
+        })();
+
+        // Contact form handling (client submit via Formspree)
+        (function () {
+            const form = document.getElementById('contactForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const spinner = document.getElementById('spinner');
+            const btnText = document.getElementById('btnText');
+            const flashContainer = document.getElementById('flashMessages');
+
+            function showFlash(category, message) {
+                const div = document.createElement('div');
+                div.className = `alert-flash alert-${category}`;
+                div.setAttribute('role', 'alert');
+                const icon = document.createElement('i');
+                icon.className = category === 'success' ? 'fas fa-check-circle' : 'fas fa-exclamation-circle';
+                div.appendChild(icon);
+                const span = document.createElement('span');
+                span.textContent = message;
+                div.appendChild(span);
+                flashContainer.appendChild(div);
+                setTimeout(() => { div.style.display = 'none'; }, 4000);
+            }
+
+            if (form) {
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    const name = form.name.value.trim();
+                    const email = form.email.value.trim();
+                    const message = form.message.value.trim();
+                    if (!name || !email || !message) {
+                        showFlash('error', 'All fields are required!');
+                        return;
+                    }
+
+                    submitBtn.disabled = true;
+                    spinner.classList.add('show');
+                    btnText.textContent = 'Sending...';
+
+                    const data = new FormData(form);
+
+                    fetch(form.action, {
+                        method: 'POST',
+                        body: data,
+                        headers: { 'Accept': 'application/json' }
+                    })
+                        .then(response => {
+                            spinner.classList.remove('show');
+                            btnText.textContent = 'Send Message';
+                            submitBtn.disabled = false;
+                            if (response.ok) {
+                                showFlash('success', 'Message Sent Successfully! ✓');
+                                form.reset();
+                            } else {
+                                return response.json().then(data => {
+                                    showFlash('error', data.error || 'Error submitting form');
+                                });
+                            }
+                        })
+                        .catch(err => {
+                            spinner.classList.remove('show');
+                            btnText.textContent = 'Send Message';
+                            submitBtn.disabled = false;
+                            showFlash('error', 'Error sending message');
+                            console.error(err);
+                        });
+                });
+            }
+        })();
+    </script>
+
+</body>
+</ht
