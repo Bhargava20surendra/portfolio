@@ -40,7 +40,7 @@ The website is fully responsive, interactive, and deployed using GitHub Pages.
 ## 📬 Contact
 
 - 📧 Email: bhargava.surendrachekuri13@gmail.com
-- 🔗 LinkedIn: https://linkedin.com/in/bhargava-surendra-chekuri
+- 🔗 LinkedIn: https://www.linkedin.com/in/chekuri-bhargava-surendra-b34380252/
 - 💻 GitHub: https://github.com/Bhargava20surendra
 
 ---
