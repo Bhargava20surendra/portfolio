@@ -465,6 +465,44 @@
             opacity: 0.7;
             cursor: not-allowed;
         }
+        /* Resume button */
+.resume-link {
+    background: #ffc107;
+    color: #111 !important;
+    padding: 0.45rem 1rem !important;
+    border-radius: 8px;
+    font-weight: 600;
+    margin-left: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.resume-link::after {
+    display: none !important;
+}
+
+.resume-link:hover {
+    background: #e0a800;
+    color: #111 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 193, 7, 0.3);
+}
+
+.resume-link i {
+    transition: transform 0.3s ease;
+}
+
+.resume-link:hover i {
+    transform: translateY(2px);
+}
+
+/* Mobile navbar */
+@media (max-width: 991.98px) {
+    .resume-link {
+        display: inline-block;
+        margin-left: 0;
+        margin-top: 0.5rem;
+    }
+}
     </style>
 </head>
 
@@ -487,7 +525,13 @@
                     <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-
+                    <li class="nav-item ms-lg-2">
+                        <a class="nav-link resume-link"
+                           href="Bhargava_Surendra_Resume.pdf"
+                           download="Bhargava_Surendra_Resume.pdf">
+                            <i class="fas fa-download me-1"></i> Resume
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -784,7 +828,7 @@
                         <a href="https://github.com/Bhargava20surendra" target="_blank" title="GitHub">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="https://linkedin.com/in/bhargava-surendra-chekuri" target="_blank" title="LinkedIn">
+                        <a href="https://www.linkedin.com/in/chekuri-bhargava-surendra-b34380252/" target="_blank" title="LinkedIn">
                             <i class="fab fa-linkedin"></i>
                         </a>
                     </div>
@@ -962,7 +1006,7 @@
 
 </body>
 
-</ht
+</html>
 
 
 
